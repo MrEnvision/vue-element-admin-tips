@@ -1,250 +1,356 @@
-<p align="center">
-  <img width="320" src="https://wpimg.wallstcn.com/ecc53a42-d79b-42e2-8852-5126b810a4c8.svg">
-</p>
+# 管理系统开发 Tips（Vue 项目）
 
-<p align="center">
-  <a href="https://github.com/vuejs/vue">
-    <img src="https://img.shields.io/badge/vue-2.6.10-brightgreen.svg" alt="vue">
-  </a>
-  <a href="https://github.com/ElemeFE/element">
-    <img src="https://img.shields.io/badge/element--ui-2.7.0-brightgreen.svg" alt="element-ui">
-  </a>
-  <a href="https://travis-ci.org/PanJiaChen/vue-element-admin" rel="nofollow">
-    <img src="https://travis-ci.org/PanJiaChen/vue-element-admin.svg?branch=master" alt="Build Status">
-  </a>
-  <a href="https://github.com/PanJiaChen/vue-element-admin/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license">
-  </a>
-  <a href="https://github.com/PanJiaChen/vue-element-admin/releases">
-    <img src="https://img.shields.io/github/release/PanJiaChen/vue-element-admin.svg" alt="GitHub release">
-  </a>
-  <a href="https://gitter.im/vue-element-admin/discuss">
-    <img src="https://badges.gitter.im/Join%20Chat.svg" alt="gitter">
-  </a>
-  <a href="https://panjiachen.github.io/vue-element-admin-site/donate">
-    <img src="https://img.shields.io/badge/%24-donate-ff69b4.svg" alt="donate">
-  </a>
-</p>
-
-English | [简体中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [Spanish](./README.es.md)
-
-<p align="center">
-  <b>SPONSORED BY</b>
-</p>
-<table align="center" cellspacing="0" cellpadding="0">
-  <tbody>
-    <tr>
-      <td align="center" valign="middle" width="250">
-        <a href="https://www.duohui.cn/?utm_source=vue-element-admin&utm_medium=web&utm_campaign=vue-element-admin_github" title="多会" target="_blank">
-          <img height="60px" src="https://qiniu.cdn.duohui.co/brand/duohui.png" title="多会 - 活动服务销售平台">
-          <p>活动服务销售平台</p>
-        </a>
-      </td>
-      <td align="center" valign="middle" width="250">
-        <a href="https://youke.co/?utm_source=vue-element-admin&utm_medium=web&utm_campaign=vue-element-admin_github" title="有客" target="_blank">
-          <img height="60px" src="https://qiniu.cdn.duohui.co/brand/youke.png" title="有客 - 客户消息直达工作群">
-          <p>客户消息直达工作群</p>
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-## Introduction
-
-[vue-element-admin](https://panjiachen.github.io/vue-element-admin) is a production-ready front-end solution for admin interfaces. It is based on [vue](https://github.com/vuejs/vue) and uses the UI Toolkit [element-ui](https://github.com/ElemeFE/element).
-
-[vue-element-admin](https://panjiachen.github.io/vue-element-admin) is based on the newest development stack of vue and it has a built-in i18n solution, typical templates for enterprise applications, and lots of awesome features. It helps you build large and complex Single-Page Applications. I believe whatever your needs are, this project will help you.
-
-- [Preview](https://panjiachen.github.io/vue-element-admin)
-
-- [Documentation](https://panjiachen.github.io/vue-element-admin-site/)
-
-- [Gitter](https://gitter.im/vue-element-admin/discuss)
-
-- [Donate](https://panjiachen.github.io/vue-element-admin-site/donate/)
-
-- [Wiki](https://github.com/PanJiaChen/vue-element-admin/wiki)
-
-- [Gitee](https://panjiachen.gitee.io/vue-element-admin/) 国内用户可访问该地址在线预览
-
-- Base template recommends using: [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
-- Desktop: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
-- Typescript: [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template) (Credits: [@Armour](https://github.com/Armour))
-- [awesome-project](https://github.com/PanJiaChen/vue-element-admin/issues/2312)
-
-**After the `v4.1.0+` version, the default master branch will not support i18n. Please use [i18n Branch](https://github.com/PanJiaChen/vue-element-admin/tree/i18n), it will keep up with the master update**
-
-**The current version is `v4.0+` build on `vue-cli`. If you find a problem, please put [issue](https://github.com/PanJiaChen/vue-element-admin/issues/new). If you want to use the old version , you can switch branch to [tag/3.11.0](https://github.com/PanJiaChen/vue-element-admin/tree/tag/3.11.0), it does not rely on `vue-cli`**
-
-**This project does not support low version browsers (e.g. IE). Please add polyfill by yourself.**
-
-## Preparation
-
-You need to install [node](https://nodejs.org/) and [git](https://git-scm.com/) locally. The project is based on [ES2015+](https://es6.ruanyifeng.com/), [vue](https://cn.vuejs.org/index.html), [vuex](https://vuex.vuejs.org/zh-cn/), [vue-router](https://router.vuejs.org/zh-cn/), [vue-cli](https://github.com/vuejs/vue-cli) , [axios](https://github.com/axios/axios) and [element-ui](https://github.com/ElemeFE/element), all request data is simulated using [Mock.js](https://github.com/nuysoft/Mock).
-Understanding and learning this knowledge in advance will greatly help the use of this project.
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/PanJiaChen/vue-element-admin/tree/CodeSandbox)
+> [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 是基于 Vue 和 ElementUI 的后台前端解决方案，[简体中文](./README.zh-CN.md) | [English](./README.md) ，本文主要基于该项目总结「后台管理类系统」的开发过程中的一些技巧和值得学习的思想。
 
 <p align="center">
   <img width="900" src="https://wpimg.wallstcn.com/a5894c1b-f6af-456e-82df-1151da0839bf.png">
 </p>
 
-## Sponsors
+# 1. 代码规范化配置
 
-Become a sponsor and get your logo on our README on GitHub with a link to your site. [[Become a sponsor]](https://www.patreon.com/panjiachen)
+本项目主要基于 Eslint + husky + lint-staged 进行代码配置，推荐阅读 👉[「Eslint + Prettier + husky + lint-staged 前端代码规范」](https://github.com/MrEnvision/Front-end_learning_project/tree/master/coding_guide_setting)。
 
-### Akveo
-<a href="https://store.akveo.com/products/vue-java-admin-dashboard-spring?utm_campaign=akveo_store-Vue-Vue_demo%2Fgithub&utm_source=vue_admin&utm_medium=referral&utm_content=github_banner"><img width="500px" src="https://raw.githubusercontent.com/PanJiaChen/vue-element-admin-site/master/docs/.vuepress/public/images/vue-java-banner.png" /></a><p>Get Java backend for Vue admin with 20% discount for 39$ use coupon code SWB0RAZPZR1M
-</p>
+# 2. 自动化引入文件
 
-### Flatlogic
+如下代码所示，Vuex module 手动一个个去引入相应的文件比较麻烦：
 
-<a href="https://flatlogic.com/admin-dashboards?from=vue-element-admin"><img width="150px" src="https://wpimg.wallstcn.com/9c0b719b-5551-4c1e-b776-63994632d94a.png" /></a><p>Admin Dashboard Templates made with Vue, React and Angular.</p>
+```js
+import moduleOne from './modules/moduleOne'
+import moduleTwo from './modules/moduleTwo'
+import moduleThree from './modules/moduleThree'
 
-## Features
-
-```
-- Login / Logout
-
-- Permission Authentication
-  - Page permission
-  - Directive permission
-  - Permission configuration page
-  - Two-step login
-
-- Multi-environment build
-  - Develop (dev)
-  - sit
-  - Stage Test (stage)
-  - Production (prod)
-
-- Global Features
-  - I18n
-  - Multiple dynamic themes
-  - Dynamic sidebar (supports multi-level routing)
-  - Dynamic breadcrumb
-  - Tags-view (Tab page Support right-click operation)
-  - Svg Sprite
-  - Mock data
-  - Screenfull
-  - Responsive Sidebar
-
-- Editor
-  - Rich Text Editor
-  - Markdown Editor
-  - JSON Editor
-
-- Excel
-  - Export Excel
-  - Upload Excel
-  - Visualization Excel
-  - Export zip
-
-- Table
-  - Dynamic Table
-  - Drag And Drop Table
-  - Inline Edit Table
-
-- Error Page
-  - 401
-  - 404
-
-- Components
-  - Avatar Upload
-  - Back To Top
-  - Drag Dialog
-  - Drag Select
-  - Drag Kanban
-  - Drag List
-  - SplitPane
-  - Dropzone
-  - Sticky
-  - CountTo
-
-- Advanced Example
-- Error Log
-- Dashboard
-- Guide Page
-- ECharts
-- Clipboard
-- Markdown to html
+export default new Vuex.Store({
+  modules: {
+    moduleOne,
+    moduleTwo,
+    moduleThree
+  }
+})
 ```
 
-## Getting started
+现在通过自动搜索文件的方式来自动化引入 Vuex module，从而不需要再手动一个个去引入相应的文件：
 
-```bash
-# clone the project
-git clone https://github.com/PanJiaChen/vue-element-admin.git
+```js
+// 通过自动化搜索文件来引入 Vuex module
+const modulesFiles = require.context('./modules', true, /\.js$/)
+const modules = modulesFiles.keys().reduce((modules, modulePath) => {
+  const moduleName = modulePath.replace(/^\.\/(.*)\.\w+$/, '$1') // set './app.js' => 'app'
+  const value = modulesFiles(modulePath)
+  modules[moduleName] = value.default
+  return modules
+}, {})
 
-# enter the project directory
-cd vue-element-admin
-
-# install dependency
-npm install
-
-# develop
-npm run dev
+export default new Vuex.Store({
+  modules,
+})
 ```
 
-This will automatically open http://localhost:9527
+# 3. Axios 全局拦截
 
-## Build
+```js
+// utils/request.js
+import axios from 'axios'
+// 直接利用 Message 组件显示请求返回信息
+import { Message } from 'element-ui'
 
-```bash
-# build for test environment
-npm run build:stage
+const service = axios.create({
+  baseURL: process.env.VUE_APP_BASE_API, // 真实请求 url = baseURL + requestURL
+  timeout: 5000, // request timeout
+})
 
-# build for production environment
-npm run build:prod
+// request 拦截器
+service.interceptors.request.use(
+  (config) => {
+    // do something before request is sent
+    // 例如，请求头携带Token等，config.headers["Token"] = 'XXX';
+    return config
+  },
+  (error) => {
+    // do something with request error
+    console.log(error) // for debug
+    return Promise.reject(error)
+  }
+)
+
+// response 拦截器
+service.interceptors.response.use(
+  (response) => {
+    const res = response.data
+    // 以下判断仅供参考，视后端返回情况而定
+    if (res.code !== 20000) {
+      // code 不等于视为存在错误
+      Message({
+        message: res.message || 'Error',
+        type: 'error',
+      })
+      return Promise.reject(new Error(res.message || 'Error'))
+    } else {
+      return response
+    }
+  },
+  (error) => {
+    // do something with response error
+    console.log('error' + error) // for debug
+    Message({
+      message: error.message,
+      type: 'error',
+    })
+    return Promise.reject(error)
+  }
+)
+
+export default service
 ```
 
-## Advanced
+# 4. 路由守卫*
 
-```bash
-# preview the release environment effect
-npm run preview
+```js
+// permission.js  路由守卫
+import router from './router'
+import { getToken } from '@/utils/auth' // get token from cookie
 
-# preview the release environment effect + static resource analysis
-npm run preview -- --report
+// 设置白名单
+const whiteList = ['/login', '/auth-redirect'] // no redirect whitelist
 
-# code format check
-npm run lint
-
-# code format check and auto fix
-npm run lint -- --fix
+router.beforeEach(async (to, from, next) => {
+  // 1. 通过 token 判断用户是否登录
+  const hasToken = getToken()
+  if (hasToken) {
+    // 2. 用户已登录
+    if (to.path === '/login') {
+      // 2.1 用户已登录且当前访问的是登录页面，则跳转至首页
+      next({ path: '/' })
+    } else {
+      // 2.2 用户已登录且当前访问的不是登录页面，则 go directly
+      // 此处还可以判断用户是否获得了他的权限角色，如果未获取则需要进行获取并动态生成路由
+      next()
+    }
+  } else {
+    // 3. 用户未登录（无token）
+    if (whiteList.indexOf(to.path) !== -1) {
+      // 3.1 用户未登录但访问的是白名单路径，则 go directly
+      next()
+    } else {
+      // 3.2 用户未登录且访问的不是白名单路径，则转至登录页面（是否带有 redirect 信息视需求而定）
+      next(`/login?redirect=${to.path}`)
+    }
+  }
+})
 ```
 
-Refer to [Documentation](https://panjiachen.github.io/vue-element-admin-site/guide/essentials/deploy.html) for more information
+# 5. 动态路由
 
-## Changelog
+路由根据权限可以分为基础路由和动态路由：
 
-Detailed changes for each release are documented in the [release notes](https://github.com/PanJiaChen/vue-element-admin/releases).
+```js
+// router.index.js
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
-## Online Demo
+Vue.use(VueRouter)
 
-[Preview](https://panjiachen.github.io/vue-element-admin)
+/* constantRoutes: 基础路由，不需要考虑权限，所有用户角色都能访问 */
+export const constantRoutes = []
 
-## Donate
+/* asyncRoutes: 根据用户角色动态加载的路由 */
+export const asyncRoutes = []
 
-If you find this project useful, you can buy author a glass of juice :tropical_drink:
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes: constantRoutes,
+})
 
-![donate](https://wpimg.wallstcn.com/bd273f0d-83a0-4ef2-92e1-9ac8ed3746b9.png)
+export default router
+```
 
-[Paypal Me](https://www.paypal.me/panfree23)
+如上述代码所示，默认情况下只有`constantRoutes`，动态路由的话需要用户在第一次登录进入系统的时候需要可以角色进行生成：
 
-[Buy me a coffee](https://www.buymeacoffee.com/Pan)
+```js
+// permission.js  路由守卫
+import router from './router'
+import { getToken } from '@/utils/auth' // get token from cookie
+import { constantRoutes } from '@/router'
 
-## Browsers support
+const whiteList = ['/login', '/auth-redirect'] // no redirect whitelist
 
-Modern browsers and Internet Explorer 10+.
+router.beforeEach(async (to, from, next) => {
+  const hasToken = getToken()
+  if (hasToken) {
+    if (to.path === '/login') {
+      next({ path: '/' })
+    } else {
+      // 2.2 用户已登录且当前访问的不是登录页面，则 go directly
+      // 此处还可以判断用户是否获得了他的权限角色，如果未获取则需要进行获取并动态生成路由(一般是第一次的时候)
 
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Safari |
-| --------- | --------- | --------- | --------- |
-| IE10, IE11, Edge | last 2 versions | last 2 versions | last 2 versions |
+      // 如果已经获取权限并且生成了动态路由则会在 vuex 中保存，此时就可以通过该字段来判断是否已执行权限获取
+      const hasRoles = store.getters.roles && store.getters.roles.length > 0
+      if (hasRoles) {
+        // 2.2.1 已经获取过权限且生成动态路由了则 go directly
+        next()
+      } else {
+        // 2.2.1 未获取用户权限和生成动态路由
+        try {
+          // get user info
+          // note: roles must be a object array! such as: ['admin'] or ,['developer','editor']
+          const { roles } = await store.dispatch('user/getInfo')
 
-## License
+          // 动态分配路由 generate accessible routes map based on roles
+          const accessRoutes = await store.dispatch('permission/generateRoutes', roles)
 
-[MIT](https://github.com/PanJiaChen/vue-element-admin/blob/master/LICENSE)
+          // 添加动态路由 dynamically add accessible routes
+          // router.options.routes = [...constantRoutes, accessRoutes];
+          router.addRoutes(accessRoutes)
 
-Copyright (c) 2017-present PanJiaChen
+          // hack method to ensure that addRoutes is complete
+          // set the replace: true, so the navigation will not leave a history record
+          next({ ...to, replace: true })
+        } catch (error) {
+          // remove token and go to login page to re-login
+          await store.dispatch('user/resetToken')
+          next(`/login?redirect=${to.path}`)
+        }
+      }
+    }
+  } else {
+    if (whiteList.indexOf(to.path) !== -1) {
+      next()
+    } else {
+      next(`/login?redirect=${to.path}`)
+    }
+  }
+})
+```
+
+路由中 meta 字段设置相应的 role 内容，其表示哪些用户角色允许访问该路由，从而能够根据用户角色动态更新路由：
+
+```js
+// 动态分配路由，对应 store.dispatch('permission/generateRoutes', roles)
+import { asyncRoutes, constantRoutes } from '@/router'
+
+function hasPermission(roles, route) {
+  if (route.meta && route.meta.roles) {
+    return roles.some(role => route.meta.roles.includes(role))
+  } else {
+    return true
+  }
+}
+
+function filterAsyncRoutes(routes, roles) {
+  const res = []
+
+  routes.forEach(route => {
+    const tmp = { ...route }
+    if (hasPermission(roles, tmp)) {
+      if (tmp.children) {
+        tmp.children = filterAsyncRoutes(tmp.children, roles)
+      }
+      res.push(tmp)
+    }
+  })
+
+  return res
+}
+
+const actions = {
+  // 按角色分配路由权限
+  generateRoutes(content, roles) {
+    return new Promise(resolve => {
+      let accessedRoutes
+      if (roles.includes('admin')) {
+        // 超级管理员
+        accessedRoutes = asyncRoutes || []
+      } else {
+        // 普通管理员
+        accessedRoutes = filterAsyncRoutes(asyncRoutes, roles)
+      }
+      // 更新路由
+      content.commit('SET_ROUTES', accessedRoutes)
+      resolve(accessedRoutes)
+    })
+  }
+}
+```
+
+# 6. Mock 请求数据
+
+本项目的数据均通过 [mock.js](https://github.com/nuysoft/Mock) 生成，推荐阅读：[「vue项目中mock.js的使用」](https://juejin.cn/post/6844903847660371982)，尤其关注一下几个方面的使用：
+
+- Mock.mock( rurl, template )：当拦截到匹配 `rurl` 的 Ajax 请求时，将根据数据模板 `template` 生成模拟数据返回。
+- Mock.mock( rurl, function( options ) )：当拦截到匹配 `rurl` 的 Ajax 请求时，函数 `function(options)` 执行并把结果返回。
+
+# 7. 全局 Svg Icon 图标组件
+
+推荐阅读：[「手摸手，带你优雅的使用 icon」](https://juejin.cn/post/6844903517564436493)，具体应用可详见项目：[「Vue3.0项目-简易后台管理系统」](https://github.com/MrEnvision/vue-admin#171-svg文件)。
+
+```js
+// ./icon.js，可将其引入 main.js 全局注册 svg-icon 组件
+import Vue from 'vue'
+import SvgIcon from '@/components/SvgIcon'// svg component
+
+// register globally
+Vue.component('svg-icon', SvgIcon)
+
+// 解析 svg 文件自动导入，只需要把文件放在固定的搜索路径
+const req = require.context('./svg', false, /\.svg$/)
+const requireAll = requireContext => requireContext.keys().map(requireContext)
+requireAll(req)
+```
+
+```vue
+<template>
+  <svg :class="svgClass" aria-hidden="true" v-on="$listeners">
+    <use :xlink:href="iconName" />
+  </svg>
+</template>
+
+<script>
+export default {
+  name: 'SvgIcon',
+  props: {
+    iconClass: {
+      type: String,
+      required: true
+    },
+    className: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    iconName() {
+      return `#icon-${this.iconClass}`
+    },
+    svgClass() {
+      if (this.className) {
+        return 'svg-icon ' + this.className
+      } else {
+        return 'svg-icon'
+      }
+    }
+  }
+}
+</script>
+
+<style scoped>
+.svg-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+</style>
+```
+
+除此之外还需要 svg-sprite-loader 这个 webpack loader 来将所有 svg 打包成 svg-sprite，安装 svg-sprite-loader，在 vue.config.js 中配置具体详见[「vue.config.js 文件」](./vue.config.js) 或 [「Vue3.0项目-简易后台管理系统」](https://github.com/MrEnvision/vue-admin#171-svg文件)。
+
+# 8. 模块化思想
+
+对于大型项目来说一定要有模块化思想，不要把一堆东西都写在一起，例如本项目中 Vuex 和路由都采用了模块化进行划分，详见代码。
+
+
+
+------
+
+项目内容有错误或存在侵权，请提交 issues 进行指正，合作请邮件 <a href="mailto:EnvisionShen@gmail.com">EnvisionShen@gmail.com </a>联系。
